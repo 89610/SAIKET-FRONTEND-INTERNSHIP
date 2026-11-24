@@ -1,0 +1,716 @@
+/* =====================================
+   1. CSS RESET
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================
+   2. ROOT VARIABLES
+===================================== */
+
+:root {
+
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+
+    --background: #f8fafc;
+    --white: #ffffff;
+
+    --text-primary: #111827;
+    --text-secondary: #64748b;
+
+    --border: #e2e8f0;
+
+    --success: #16a34a;
+    --danger: #dc2626;
+
+}
+
+
+/* =====================================
+   3. GLOBAL STYLING
+===================================== */
+
+body {
+
+    font-family: 'Inter', sans-serif;
+
+    background: var(--background);
+
+    color: var(--text-primary);
+
+    min-height: 100vh;
+
+    line-height: 1.6;
+
+}
+
+
+button {
+    font-family: inherit;
+}
+
+
+/* =====================================
+   4. MAIN CONTAINER
+===================================== */
+
+.quiz-container {
+
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding: 30px 20px;
+
+}
+
+
+/* =====================================
+   5. HEADER
+===================================== */
+
+.quiz-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 35px;
+
+}
+
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 21px;
+
+    font-weight: 800;
+
+}
+
+
+.logo-icon {
+
+    width: 40px;
+
+    height: 40px;
+
+    display: grid;
+
+    place-items: center;
+
+    background: var(--primary);
+
+    color: var(--white);
+
+    border-radius: 10px;
+
+}
+
+
+.category-badge {
+
+    padding: 7px 13px;
+
+    background: #eef2ff;
+
+    color: var(--primary-dark);
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =====================================
+   6. QUIZ CARD
+===================================== */
+
+.quiz-card {
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 40px;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.04);
+
+}
+
+
+/* =====================================
+   7. START SCREEN
+===================================== */
+
+.start-screen {
+
+    text-align: center;
+
+}
+
+
+.quiz-icon {
+
+    width: 80px;
+
+    height: 80px;
+
+    display: grid;
+
+    place-items: center;
+
+    background: #eef2ff;
+
+    border-radius: 20px;
+
+    font-size: 38px;
+
+    margin: 0 auto 22px;
+
+}
+
+
+.start-screen h1 {
+
+    font-size: 29px;
+
+    font-weight: 800;
+
+    margin-bottom: 12px;
+
+}
+
+
+.start-screen > p {
+
+    max-width: 450px;
+
+    margin: 0 auto;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================
+   8. QUIZ INFORMATION
+===================================== */
+
+.quiz-info {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin: 35px 0;
+
+}
+
+
+.info-item {
+
+    padding: 18px 10px;
+
+    background: #f8fafc;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+}
+
+
+.info-item strong {
+
+    display: block;
+
+    font-size: 22px;
+
+    color: var(--primary);
+
+}
+
+
+.info-item span {
+
+    color: var(--text-secondary);
+
+    font-size: 11px;
+
+}
+
+
+/* =====================================
+   9. PRIMARY BUTTON
+===================================== */
+
+.primary-button {
+
+    padding: 13px 25px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: var(--primary);
+
+    color: var(--white);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: background 0.3s ease,
+                transform 0.2s ease;
+
+}
+
+
+.primary-button:hover {
+
+    background: var(--primary-dark);
+
+    transform: translateY(-2px);
+
+}
+
+
+.primary-button:active {
+
+    transform: scale(0.98);
+
+}
+
+
+.primary-button:focus-visible {
+
+    outline: 3px solid #a5b4fc;
+
+    outline-offset: 3px;
+
+}
+
+
+/* =====================================
+   10. QUIZ SCREEN
+===================================== */
+
+.quiz-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    margin-bottom: 12px;
+
+}
+
+
+/* Progress Bar */
+
+.progress-track {
+
+    width: 100%;
+
+    height: 8px;
+
+    background: #e5e7eb;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+.progress-fill {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: var(--primary);
+
+    border-radius: inherit;
+
+    transition: width 0.3s ease;
+
+}
+
+
+/* =====================================
+   11. QUESTION SECTION
+===================================== */
+
+.question-section {
+
+    margin: 35px 0 25px;
+
+}
+
+
+.question-section h2 {
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    line-height: 1.5;
+
+}
+
+
+/* =====================================
+   12. ANSWER OPTIONS
+===================================== */
+
+.options-container {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+
+}
+
+
+.option-button {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    width: 100%;
+
+    padding: 16px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: var(--white);
+
+    color: var(--text-primary);
+
+    text-align: left;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+}
+
+
+.option-button:hover:not(:disabled) {
+
+    border-color: var(--primary);
+
+    background: #f5f3ff;
+
+}
+
+
+.option-letter {
+
+    width: 30px;
+
+    height: 30px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex-shrink: 0;
+
+    background: #f1f5f9;
+
+    color: var(--text-secondary);
+
+    border-radius: 7px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.option-button.selected {
+
+    border-color: var(--primary);
+
+    background: #eef2ff;
+
+}
+
+
+.option-button.selected .option-letter {
+
+    background: var(--primary);
+
+    color: var(--white);
+
+}
+
+
+/* =====================================
+   13. VALIDATION MESSAGE
+===================================== */
+
+.error-message {
+
+    margin-top: 15px;
+
+    color: var(--danger);
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+}
+
+
+/* =====================================
+   14. QUIZ CONTROLS
+===================================== */
+
+.quiz-controls {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: 30px;
+
+}
+
+
+/* =====================================
+   15. RESULT SCREEN
+===================================== */
+
+.result-screen {
+
+    text-align: center;
+
+}
+
+
+.result-icon {
+
+    font-size: 65px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.result-screen h2 {
+
+    font-size: 28px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.result-description {
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+}
+
+
+.score-card {
+
+    margin: 30px 0;
+
+    padding: 25px;
+
+    background: #eef2ff;
+
+    border-radius: 14px;
+
+}
+
+
+.score-card > span {
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+
+}
+
+
+.score-card h3 {
+
+    color: var(--primary-dark);
+
+    font-size: 38px;
+
+    margin: 8px 0;
+
+}
+
+
+.score-card p {
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+
+}
+
+
+/* =====================================
+   16. FOOTER
+===================================== */
+
+.quiz-footer {
+
+    text-align: center;
+
+    padding: 25px 10px;
+
+    color: var(--text-secondary);
+
+    font-size: 11px;
+
+}
+
+
+/* =====================================
+   17. UTILITY CLASS
+===================================== */
+
+.hidden {
+
+    display: none !important;
+
+}
+
+
+/* =====================================
+   18. RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 600px) {
+
+    .quiz-container {
+
+        padding: 20px 15px;
+
+    }
+
+
+    .quiz-header {
+
+        margin-bottom: 25px;
+
+    }
+
+
+    .logo {
+
+        font-size: 18px;
+
+    }
+
+
+    .category-badge {
+
+        font-size: 8px;
+
+        padding: 6px 9px;
+
+    }
+
+
+    .quiz-card {
+
+        padding: 25px 18px;
+
+    }
+
+
+    .start-screen h1 {
+
+        font-size: 23px;
+
+    }
+
+
+    .question-section h2 {
+
+        font-size: 18px;
+
+    }
+
+
+    .option-button {
+
+        padding: 13px;
+
+    }
+
+
+    .quiz-top {
+
+        font-size: 10px;
+
+    }
+
+
+    .quiz-info {
+
+        gap: 8px;
+
+    }
+
+}

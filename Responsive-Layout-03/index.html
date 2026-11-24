@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="TechHub developer dashboard with responsive layout."
+    />
+
+    <title>TechHub | Developer Dashboard</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- Main Page Layout -->
+    <div class="page-layout">
+      <!-- Header Section -->
+      <header class="header">
+        <div class="logo">
+          <span class="logo-icon">T</span>
+          <span>TechHub</span>
+        </div>
+
+        <nav class="header-nav" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#projects">Projects</a>
+          <a href="#resources">Resources</a>
+        </nav>
+
+        <div class="profile">
+          <span class="profile-avatar">A</span>
+
+          <span class="profile-name"> Developer </span>
+        </div>
+      </header>
+
+      <!-- Sidebar Section -->
+      <aside class="sidebar">
+        <div class="sidebar-heading">WORKSPACE</div>
+
+        <nav aria-label="Sidebar navigation">
+          <a href="#home" class="sidebar-link active">
+            <span>⌂</span>
+            Dashboard
+          </a>
+
+          <a href="#projects" class="sidebar-link">
+            <span>▣</span>
+            My Projects
+          </a>
+
+          <a href="#tasks" class="sidebar-link">
+            <span>✓</span>
+            Tasks
+          </a>
+
+          <a href="#resources" class="sidebar-link">
+            <span>▤</span>
+            Resources
+          </a>
+
+          <a href="#settings" class="sidebar-link">
+            <span>⚙</span>
+            Settings
+          </a>
+        </nav>
+
+        <div class="sidebar-card">
+          <h3>Keep Learning!</h3>
+
+          <p>Improve your development skills every day.</p>
+
+          <a href="#resources"> Explore Resources → </a>
+        </div>
+      </aside>
+
+      <!-- Main Content Section -->
+      <main class="main-content" id="home">
+        <section class="welcome-section">
+          <div>
+            <p class="welcome-label">DEVELOPER WORKSPACE</p>
+
+            <h1>Welcome back, Developer! 👋</h1>
+
+            <p class="welcome-description">
+              Track your progress and manage your development journey.
+            </p>
+          </div>
+
+          <button class="primary-button" type="button" id="exploreButton">
+            Explore Projects →
+          </button>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="stats-grid" aria-label="Project statistics">
+          <article class="stat-card">
+            <span class="stat-icon purple">▣</span>
+
+            <p>Total Projects</p>
+
+            <h2>12</h2>
+
+            <span class="stat-note"> +3 this month </span>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-icon green">✓</span>
+
+            <p>Completed Tasks</p>
+
+            <h2>28</h2>
+
+            <span class="stat-note"> Great progress! </span>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-icon orange">⌛</span>
+
+            <p>Pending Tasks</p>
+
+            <h2>05</h2>
+
+            <span class="stat-note"> Keep going! </span>
+          </article>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects-section" id="projects">
+          <div class="section-heading">
+            <div>
+              <h2>Recent Projects</h2>
+
+              <p>Continue working on your projects.</p>
+            </div>
+
+            <a href="#projects"> View All → </a>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card">
+              <div class="project-top">
+                <span class="project-icon purple"> &lt;/&gt; </span>
+
+                <span class="project-status"> Completed </span>
+              </div>
+
+              <h3>Portfolio Website</h3>
+
+              <p>A personal portfolio built using modern web technologies.</p>
+
+              <div class="progress-bar">
+                <span style="width: 100%"></span>
+              </div>
+
+              <div class="project-footer">
+                <span>100% Completed</span>
+                <span>HTML, CSS, JS</span>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-top">
+                <span class="project-icon blue"> ☁ </span>
+
+                <span class="project-status ongoing"> In Progress </span>
+              </div>
+
+              <h3>Weather Application</h3>
+
+              <p>A weather application with real-time API integration.</p>
+
+              <div class="progress-bar">
+                <span style="width: 65%"></span>
+              </div>
+
+              <div class="project-footer">
+                <span>65% Completed</span>
+                <span>JavaScript, API</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Learning Resources -->
+        <section class="resources-section" id="resources">
+          <h2>Learning Resources</h2>
+
+          <div class="resource-list">
+            <article class="resource-item">
+              <span class="resource-icon"> HTML </span>
+
+              <div>
+                <h3>HTML Fundamentals</h3>
+                <p>Learn semantic HTML structures.</p>
+              </div>
+            </article>
+
+            <article class="resource-item">
+              <span class="resource-icon"> CSS </span>
+
+              <div>
+                <h3>CSS & Responsive Design</h3>
+                <p>Master modern layouts and styling.</p>
+              </div>
+            </article>
+
+            <article class="resource-item">
+              <span class="resource-icon"> JS </span>
+
+              <div>
+                <h3>JavaScript Essentials</h3>
+                <p>Build interactive web applications.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer Section -->
+      <footer class="footer">
+        <p>&copy; 2026 TechHub. All rights reserved.</p>
+
+        <p>Designed for developers.</p>
+      </footer>
+    </div>
+
+    <!-- JavaScript Interaction -->
+    <script>
+      const exploreButton = document.getElementById("exploreButton");
+
+      exploreButton.addEventListener("click", () => {
+        document.getElementById("projects").scrollIntoView({
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>

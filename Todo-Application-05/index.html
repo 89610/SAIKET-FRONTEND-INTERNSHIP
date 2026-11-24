@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="TaskFlow is a simple and professional task management application."
+    />
+
+    <title>TaskFlow | Smart Task Manager</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- JavaScript -->
+    <script src="js/script.js" defer></script>
+  </head>
+
+  <body>
+    <div class="app-container">
+      <!-- =========================
+             HEADER
+        ========================== -->
+
+      <header class="app-header">
+        <div class="brand">
+          <div class="brand-icon">T</div>
+
+          <span>TaskFlow</span>
+        </div>
+
+        <div class="header-profile">
+          <span class="profile-avatar">A</span>
+
+          <span class="profile-name">My Workspace</span>
+        </div>
+      </header>
+
+      <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+      <main class="main-content">
+        <!-- Page Heading -->
+
+        <section class="welcome-section">
+          <div>
+            <span class="section-label"> TASK MANAGEMENT </span>
+
+            <h1>My Tasks</h1>
+
+            <p>Organize your work and stay productive every day.</p>
+          </div>
+
+          <div class="today-date" id="todayDate"></div>
+        </section>
+
+        <!-- =========================
+                 TASK STATISTICS
+            ========================== -->
+
+        <section class="stats-container">
+          <article class="stat-card">
+            <div class="stat-icon total-icon">📋</div>
+
+            <div>
+              <p>Total Tasks</p>
+
+              <h2 id="totalTasks">0</h2>
+            </div>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-icon active-icon">⏳</div>
+
+            <div>
+              <p>Pending Tasks</p>
+
+              <h2 id="pendingTasks">0</h2>
+            </div>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-icon completed-icon">✓</div>
+
+            <div>
+              <p>Completed Tasks</p>
+
+              <h2 id="completedTasks">0</h2>
+            </div>
+          </article>
+        </section>
+
+        <!-- =========================
+                 TASK MANAGEMENT SECTION
+            ========================== -->
+
+        <section class="task-section">
+          <div class="task-heading">
+            <div>
+              <h2>My Task List</h2>
+
+              <p>Manage your daily activities.</p>
+            </div>
+          </div>
+
+          <!-- ADD TASK FORM -->
+
+          <form id="taskForm" class="task-form">
+            <div class="input-group">
+              <label for="taskInput"> Task Description </label>
+
+              <input
+                type="text"
+                id="taskInput"
+                placeholder="What needs to be done?"
+                maxlength="120"
+                autocomplete="off"
+                required
+              />
+            </div>
+
+            <button type="submit" class="add-button" id="addButton">
+              + Add Task
+            </button>
+          </form>
+
+          <!-- VALIDATION MESSAGE -->
+
+          <p
+            id="errorMessage"
+            class="error-message"
+            role="alert"
+            aria-live="polite"
+          ></p>
+
+          <!-- =========================
+         TASK SEARCH
+    ========================== -->
+
+          <div class="search-container">
+            <div class="search-input-group">
+              <span class="search-icon">🔍</span>
+
+              <input
+                type="search"
+                id="searchInput"
+                placeholder="Search tasks..."
+                autocomplete="off"
+                aria-label="Search tasks by description"
+              />
+
+              <button
+                type="button"
+                id="clearSearch"
+                class="clear-search-button"
+                aria-label="Clear search"
+                hidden
+              >
+                ✕
+              </button>
+            </div>
+
+            <p
+              id="searchResultsCount"
+              class="search-results-count"
+              aria-live="polite"
+            ></p>
+          </div>
+
+          <!-- =========================
+     TASK FILTERS & SORTING
+========================== -->
+
+          <div class="task-toolbar">
+            <div class="filter-buttons">
+              <button
+                type="button"
+                class="filter-button active"
+                data-filter="all"
+              >
+                All
+              </button>
+
+              <button type="button" class="filter-button" data-filter="active">
+                Active
+              </button>
+
+              <button
+                type="button"
+                class="filter-button"
+                data-filter="completed"
+              >
+                Completed
+              </button>
+            </div>
+
+            <!-- TASK SORTING -->
+
+            <div class="sort-container">
+              <label for="sortSelect">Sort By:</label>
+
+              <select id="sortSelect" aria-label="Sort tasks">
+                <option value="newest">Newest First</option>
+
+                <option value="oldest">Oldest First</option>
+
+                <option value="az">A – Z</option>
+
+                <option value="za">Z – A</option>
+
+                <option value="dueDate">Due Date (Earliest First)</option>
+              </select>
+            </div>
+
+            <span id="taskCount">0 tasks</span>
+          </div>
+          <!-- =========================
+                     TASK LIST
+                ========================== -->
+
+          <div class="task-list" id="taskList">
+            <!-- JavaScript dynamically generates tasks here -->
+
+            <div class="empty-state" id="emptyState">
+              <div class="empty-icon">📝</div>
+
+              <h3>No tasks yet</h3>
+
+              <p>Add your first task and start being productive.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- =========================
+             FOOTER
+        ========================== -->
+
+      <footer class="app-footer">
+        <p>&copy; 2026 TaskFlow. All rights reserved.</p>
+
+        <p>Designed for productivity.</p>
+      </footer>
+    </div>
+  </body>
+</html>
